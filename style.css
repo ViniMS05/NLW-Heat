@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+
+  background: black;
+}
+
+/* Tittles and text */
+
+h1 {
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+/* Links and buttons */
+
+a {
+  color: lightgray;
+  text-decoration: none;
+}
