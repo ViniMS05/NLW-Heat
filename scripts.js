@@ -7,8 +7,8 @@ const socialMedia = {
 }
 
 function changeSocialMedia() {
-  let githubLink =
-    (github.href = `https://www.github.com/${socialMedia.github}`)
+  /*  let githubLink =
+    (github.href = `https://www.github.com/${socialMedia.userGithub}`)*/
   let youtubeLink =
     (youtube.children[0].href = `https://www.youtube.com/c/${socialMedia.youtube}`)
   let instagramLink =
@@ -18,6 +18,22 @@ function changeSocialMedia() {
   let twitterLink =
     (twitter.children[0].href = `https://www.twitter.com/${socialMedia.twitter}`)
 
-  return githubLink, youtubeLink, instagramLink, facebookLink, twitterLink
+  return youtubeLink, instagramLink, facebookLink, twitterLink
 }
 changeSocialMedia()
+
+function getGitHubProfileInfos() {
+  const url = `https://api.github.com/users/${socialMedia.github}`
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      userName.textContent = data.name
+      userBio.textContent = data.bio
+      userLogin.textContent = data.login
+      userAvatar.src = data.avatar_url
+      userGithub.href = data.html_url
+    })
+}
+
+getGitHubProfileInfos()
