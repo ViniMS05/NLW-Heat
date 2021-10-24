@@ -33,7 +33,7 @@ function getGitHubProfileInfos() {
       userLogin.textContent = data.login
       userAvatar.src = data.avatar_url
       userGithub.href = data.html_url
+      repositoriesUser.textContent = `Repositórios: ${data.public_repos}`
     })
 }
-
 getGitHubProfileInfos()

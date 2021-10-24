@@ -11,17 +11,25 @@ body {
   font-family: 'Roboto', sans-serif;
   color: var(--gray);
   -webkit-font-smoothing: antialiased;
+  background: var(--black) url(./images/desktopBack.svg) no-repeat center/cover;
+  box-sizing: border-box;
 }
 
 body {
   display: grid;
   place-items: center;
+  text-align: center;
 }
 
 main {
-  background: url(images/background.png);
-  width: 375px;
-  height: 812px;
+  background: url(images/background.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+}
+
+.d-sm-none {
+  display: none;
 }
 
 .container {
@@ -29,7 +37,7 @@ main {
   margin-left: auto;
   margin-right: auto;
 
-  text-align: center;
+  align-items: center;
 }
 
 .avatar {
@@ -81,4 +89,35 @@ ul {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+}
+
+@media screen and (min-width: 420px) {
+  main {
+    background-size: contain;
+
+    min-height: 540px;
+    max-width: 360px;
+    
+    margin-top: -5px;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    position:relative;
+  }
+
+  .avatar{
+    margin: 4.5rem auto 1.5rem;
+  }
+  .d-sm-none {
+    display:flex;
+    margin: 0 auto -15px;
+    z-index: 2;
+  }
+
+  #quebra {
+    margin-bottom: -30px;
+    z-index: 1;
+  }
 }
