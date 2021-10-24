@@ -16,8 +16,10 @@ body {
 }
 
 body {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: center;
   text-align: center;
 }
 
@@ -37,7 +39,6 @@ main {
   margin-left: auto;
   margin-right: auto;
 
-  align-items: center;
 }
 
 .avatar {
@@ -91,13 +92,15 @@ ul {
   gap: 0.5rem;
 }
 
-@media screen and (min-width: 420px) {
+@media screen and (min-width: 460px) {
   main {
     background-size: contain;
 
-    min-height: 540px;
-    max-width: 360px;
-    
+    width: 80vw;
+    height: 0vh;
+
+    max-height: 560px;
+
     margin-top: -5px;
 
     display: grid;
@@ -107,17 +110,21 @@ ul {
     position:relative;
   }
 
+  .container {
+    background: contain;
+  }
+
   .avatar{
     margin: 4.5rem auto 1.5rem;
   }
   .d-sm-none {
     display:flex;
-    margin: 0 auto -15px;
+    margin: 0 auto -2px;
     z-index: 2;
   }
 
   #quebra {
-    margin-bottom: -30px;
+    margin-bottom: -16px;
     z-index: 1;
   }
 }
